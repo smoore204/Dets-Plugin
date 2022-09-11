@@ -30,6 +30,8 @@ namespace Dets
 
         protected override Result RunCommand(RhinoDoc doc, RunMode mode)
          {
+            //ensure annotation leaders don't get scaled incorrectly
+            doc.ModelSpaceAnnotationScalingEnabled = false;
 
             //enable user to select breps to be annotated
             var go = new GetObject();

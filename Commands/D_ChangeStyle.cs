@@ -28,6 +28,9 @@ namespace Dets
 
         protected override Result RunCommand(RhinoDoc doc, RunMode mode)
         {
+            //ensure annotation leaders don't get scaled incorrectly
+            doc.ModelSpaceAnnotationScalingEnabled = false;
+
             //enable user to select annotations to be modified
             var go = new GetObject();
             go.SetCommandPrompt("Select annotations to be modified");
